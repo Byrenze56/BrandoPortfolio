@@ -1,9 +1,10 @@
+import { urlAlphabet } from 'nanoid';
 import React, { useContext, useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
-
+import questions from '../../images/questions.jpg';
 const Header = () => {
   const { hero } = useContext(PortfolioContext);
   const { title, name, subtitle, cta } = hero;
@@ -22,14 +23,15 @@ const Header = () => {
   }, []);
 
   return (
-    <section id="hero" className="jumbotron">
-      <Container>
+    <section id="hero" className="jumbotron" style={{backgroundImage:`url(${questions})`}}>
+      <Container >
+
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
           <h1 className="hero-title">
-            {title || 'Hi, my name is'}{' '}
-            <span className="text-color-main">{name || 'Your Name'}</span>
+           
+            <span className="text-color-main">{name || 'Jimmy B Henry'}</span>
             <br />
-            {subtitle || "I'm the Unknown Developer."}
+            {subtitle || "Jr. Web and Mobile Development with Banyan Labs"}
           </h1>
         </Fade>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
